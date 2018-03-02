@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5b73272e001c67142a13d9e4f25cd718
-timeCreated: 1520023133
+timeCreated: 1520029263
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -181,7 +181,187 @@ ModelImporter:
     13700010: Hair
     13700012: Shoes
     13700014: Tops
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: 5425394fadbbb1848ad24e9d98a2da51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottommat
+    second: {fileID: 2100000, guid: 55933e6fdf8bcbc4e85caf430b0c96eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyewearmat
+    second: {fileID: 2100000, guid: 693bd7d95a85e4d4094baab72632a737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairmat
+    second: {fileID: 2100000, guid: 656534e30be904d49991be1ab07fa01d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoesmat
+    second: {fileID: 2100000, guid: 8155a8092851e4f48aed33bebc706dc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topmat
+    second: {fileID: 2100000, guid: eb06983828c5a384282c0d34d36220de, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Body_Diffuse
+    second: {fileID: 2800000, guid: b1fdfcb4f86dc07449fe21d9489e2695, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Body_Gloss
+    second: {fileID: 2800000, guid: 23908c93a3da3f040b0b220fae4e9db9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Body_Normal
+    second: {fileID: 2800000, guid: dbdfe6cade9bd5a4da11f5fad2c5e5a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Body_Opacity
+    second: {fileID: 2800000, guid: 3b76b4e924a2d1b4289c38417b0212a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Body_Specular
+    second: {fileID: 2800000, guid: 8aa92f64db60c0b479f96f815b02e34c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Bottom_Diffuse
+    second: {fileID: 2800000, guid: 8d0659c3e9ea70a47a403428ab3c763b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Bottom_Gloss
+    second: {fileID: 2800000, guid: 95a65b78b6acd034c9ee05e8e1d4d2e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Bottom_Normal
+    second: {fileID: 2800000, guid: 086ec75667fc5844eaa7bf0ce73727b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Bottom_Opacity
+    second: {fileID: 2800000, guid: 0e0550fb46ebd2e498ea1c2531073841, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Bottom_Specular
+    second: {fileID: 2800000, guid: 38b7fb1576ee12948acb90ed790a99c9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Eyewear_Diffuse
+    second: {fileID: 2800000, guid: 1d2754ddc72bd474b9a1b2d53fa5ab4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Eyewear_Gloss
+    second: {fileID: 2800000, guid: 8a7df54eaa9c78340a303f5f2a7dec8d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Eyewear_Normal
+    second: {fileID: 2800000, guid: 467523373ead22c48b0f247c08e1aaab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Eyewear_Opacity
+    second: {fileID: 2800000, guid: 4cc17d745cd277d499c5760b1ea61827, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Eyewear_Specular
+    second: {fileID: 2800000, guid: 30f53f2b34dfd5b469478061fff34c3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Hair_Diffuse
+    second: {fileID: 2800000, guid: 9a228caa8626b0d4695aece76fe05270, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Hair_Gloss
+    second: {fileID: 2800000, guid: bf398d569f768a842af3778b15549dd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Hair_Normal
+    second: {fileID: 2800000, guid: cde239be4592edc499a49b4a27e67448, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Hair_Opacity
+    second: {fileID: 2800000, guid: fbc6ac3aa213f7a489bfd45150e25101, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Hair_Specular
+    second: {fileID: 2800000, guid: 1cccee8f20f674345bd1a8f864db0217, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Shoes_Diffuse
+    second: {fileID: 2800000, guid: 5404c3927a30b5647888cde1bfb5409d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Shoes_Gloss
+    second: {fileID: 2800000, guid: 46fb4b52d63b6594095f9f9d032cd969, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Shoes_Normal
+    second: {fileID: 2800000, guid: a701bd9768b82414cbbc371ed000ba39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Shoes_Opacity
+    second: {fileID: 2800000, guid: 4d6107c35aadb1b46bb2070f4baa5493, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Shoes_Specular
+    second: {fileID: 2800000, guid: dc70b22c65a55c24f8e02eee61affe3a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Top_Diffuse
+    second: {fileID: 2800000, guid: 85094c1114ac1994eaa39c7d9ffc105d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Top_Gloss
+    second: {fileID: 2800000, guid: b22155fb894ef734c9d70502111d13b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Top_Normal
+    second: {fileID: 2800000, guid: 19df19b9640c2364699e0798980b7fd1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Top_Opacity
+    second: {fileID: 2800000, guid: 46aaa70eb93079e4ca08c6429a3a14ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Girl_Top_Specular
+    second: {fileID: 2800000, guid: 394918624aeaeb94dbe7498e4f800275, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

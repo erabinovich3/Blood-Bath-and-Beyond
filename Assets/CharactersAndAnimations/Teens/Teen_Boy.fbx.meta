@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d0cd259434c7e1a40a9ae066015176ce
-timeCreated: 1520023157
+timeCreated: 1520028990
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -176,7 +176,157 @@ ModelImporter:
     13700008: Hair
     13700010: Shoes
     13700012: Tops
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: 1d216e53c69da4d48ad5e4fc77637144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottommat
+    second: {fileID: 2100000, guid: 02a0e3a543ce24043b8895d9d96e7f53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairmat
+    second: {fileID: 2100000, guid: 57ee4f078487012458519d69df70f957, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoesmat
+    second: {fileID: 2100000, guid: c4c363a50c65a28439e5c1044acf0152, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topmat
+    second: {fileID: 2100000, guid: 97a44a7aaaa2cb04caa04dbd45f16cea, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Body_Diffuse
+    second: {fileID: 2800000, guid: 2909f46ff7e98604b9e0fddd55893a12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Body_Gloss
+    second: {fileID: 2800000, guid: 0efe2755a21ec3b4d94c59de17613e6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Body_Normal
+    second: {fileID: 2800000, guid: 9f90a86fbcb87ff418c5e040c82cd50d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Body_Opacity
+    second: {fileID: 2800000, guid: e3714b11a0e7ef342993e63c916f2940, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Body_Specular
+    second: {fileID: 2800000, guid: 56a55a80c82273e43b3fd0028a7714f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Bottom_Diffuse
+    second: {fileID: 2800000, guid: 810bf905b12c80a4a8d5fd2d906ac7c7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Bottom_Gloss
+    second: {fileID: 2800000, guid: 466106f831294134e92b0c3b4687067b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Bottom_Normal
+    second: {fileID: 2800000, guid: 240fafeb4208a0e47afb9a84ed658f03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Bottom_Opacity
+    second: {fileID: 2800000, guid: 1dd29e10a56bb744f92c570d8264407b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Bottom_Specular
+    second: {fileID: 2800000, guid: d15a91000b81188498d4857766e1e55d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Hair_Diffuse
+    second: {fileID: 2800000, guid: 7c73268e6eb1af5438956784151becc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Hair_Gloss
+    second: {fileID: 2800000, guid: 0a0823b857d68fa4e9e0decbe813c84c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Hair_Normal
+    second: {fileID: 2800000, guid: f2da75c41d7554443a11b89a212ba9d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Hair_Opacity
+    second: {fileID: 2800000, guid: 4e0f9be297c92264a9c957d4055b2294, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Hair_Specular
+    second: {fileID: 2800000, guid: e222273ebcebcf945a11a92d6808556a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Shoes_Diffuse
+    second: {fileID: 2800000, guid: 24f4dae3ddb3d9b4d913f8cada746d30, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Shoes_Gloss
+    second: {fileID: 2800000, guid: 70d4186d2ad5dc649b8916f8ab3df3f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Shoes_Normal
+    second: {fileID: 2800000, guid: d260e307c9378cf499360be483a7e921, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Shoes_Opacity
+    second: {fileID: 2800000, guid: 1a02ab8f28e03db459558c36be0c8a80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Shoes_Specular
+    second: {fileID: 2800000, guid: 5b67ebf124bb54a4e98a72e8c4d927b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Top_Diffuse
+    second: {fileID: 2800000, guid: 3dfc4f1785ed7f343ae74eb373480afa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Top_Gloss
+    second: {fileID: 2800000, guid: 3196c91826b97014b98f40a2f70f1f24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Top_Normal
+    second: {fileID: 2800000, guid: 37dfe103017f3d14887e80e4b13c2e67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Top_Opacity
+    second: {fileID: 2800000, guid: 27fa8754220b5b34485a5bc4d09d824d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Teen_Boy_Top_Specular
+    second: {fileID: 2800000, guid: 3553c0c6fc244cd46a117fcd4e8dd097, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
