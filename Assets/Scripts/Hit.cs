@@ -23,13 +23,14 @@ public class Hit : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
+        // make sure a projectile hit teen, not something else
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Projectiles")) {
             // play hit animation
             anim.SetTrigger("hit");
 
             // change CapsuleCollider to horizontal and decrease radius so he hits the ground
-            collider.direction = 2;
             collider.radius = 0.15f;
+            collider.direction = 2;
         }
     }
 }
