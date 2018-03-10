@@ -27,8 +27,9 @@ public class Hit : MonoBehaviour {
             // play hit animation
             anim.SetTrigger("hit");
 
-            // change CapsuleCollider to trigger, non longer an obstacle
-            collider.isTrigger = true;
+            // change CapsuleCollider to horizontal and decrease radius so he hits the ground
+            collider.direction = 2;
+            collider.radius = 0.15f;
         }
     }
 }
