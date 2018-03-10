@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cb73b412093643a45ac529e6b77670ea
-timeCreated: 1520698043
+guid: 814e2ab7a32c7b640a5770bb1585f2ca
+timeCreated: 1520722071
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -141,7 +141,7 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: Warrior Idle
+    7400000: Backward Right Turn
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -156,7 +156,14 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
+      : position error = 8.896132 mm\n\t'mixamorig:LeftLeg' : position error = 2.444357
+      mm\n\t'mixamorig:LeftFoot' : position error = 3.618200 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 8.995885 mm\n\t'mixamorig:RightUpLeg' : position error =
+      8.963655 mm\n\t'mixamorig:RightLeg' : position error = 2.565905 mm\n\t'mixamorig:RightFoot'
+      : position error = 3.570521 mm\n\t'mixamorig:RightToeBase' : position error
+      = 9.421916 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -171,10 +178,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Warrior Idle
+      name: Backward Right Turn
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 344
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -182,9 +189,9 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
