@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dd205520da90e5f4ab9c33c7c52f6e76
-timeCreated: 1520697704
+guid: af99768032d314441bc147a4070fbc03
+timeCreated: 1520793502
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -141,7 +141,7 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: Idle
+    7400000: Breathing Idle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -156,14 +156,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 8.896132 mm\n\t'mixamorig:LeftLeg' : position error = 2.444357
-      mm\n\t'mixamorig:LeftFoot' : position error = 3.618200 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 8.995885 mm\n\t'mixamorig:RightUpLeg' : position error =
-      8.963655 mm\n\t'mixamorig:RightLeg' : position error = 2.565905 mm\n\t'mixamorig:RightFoot'
-      : position error = 3.570521 mm\n\t'mixamorig:RightToeBase' : position error
-      = 9.421916 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -178,10 +171,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Breathing Idle
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 99
+      lastFrame: 221
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -192,7 +185,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
