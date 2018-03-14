@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4470575, g: 0.49696064, b: 0.5750912, a: 1}
+  m_IndirectSpecularColor: {r: 0.44705772, g: 0.49696106, b: 0.5750919, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 52a66b9b11d41d84e8714ed60facaa29, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 82eb4ea415ac51a488cb83ce8932ba67, type: 2}
 --- !u!1 &11506514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,7 +1961,7 @@ Transform:
   m_LocalScale: {x: 0.50000024, y: 5, z: 15.5}
   m_Children: []
   m_Father: {fileID: 1049389990}
-  m_RootOrder: 49
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &527356329
 MeshRenderer:
@@ -2884,7 +2884,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 5, z: 10.7}
   m_Children: []
   m_Father: {fileID: 1049389990}
-  m_RootOrder: 52
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &875962809
 MeshRenderer:
@@ -3354,11 +3354,11 @@ Transform:
   - {fileID: 782596068}
   - {fileID: 1945258163}
   - {fileID: 437758902}
-  - {fileID: 1697722272}
   - {fileID: 527356328}
   - {fileID: 1277390888}
-  - {fileID: 732559774}
   - {fileID: 875962808}
+  - {fileID: 732559774}
+  - {fileID: 1697722272}
   - {fileID: 484415543}
   - {fileID: 1042440652}
   - {fileID: 185220494}
@@ -3892,7 +3892,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1.16, z: 2.22}
   m_Children: []
   m_Father: {fileID: 1049389990}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &1277390889
 MeshRenderer:
@@ -5176,6 +5176,43 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40a588fc25e14854abb65c5802c5212e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1829509088 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1638898483346636, guid: 40a588fc25e14854abb65c5802c5212e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1829509087}
+--- !u!114 &1829509089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829509088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4baca8786014d1a4bb6e7a1bf74e6432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &1829509090
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829509088}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1860859567
 GameObject:
   m_ObjectHideFlags: 0
