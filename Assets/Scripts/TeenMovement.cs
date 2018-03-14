@@ -33,19 +33,20 @@ public class TeenMovement : StateMachine {
 
     public class Wander : State
     {
-        UnityEngine.AI.NavMeshAgent nav;
+        NavMeshAgent nav;
         Transform position;
 
         public override void Execute()
         {
-            if (nav.remainingDistance <= 10f)
+            if (nav.remainingDistance <= 10)
             {
-                Vector3 target = RandomNavSphere(position.position, 50f, -1);
+                Vector3 target = RandomNavSphere(position.position, 100f, -1);
                 nav.SetDestination(target);
-
             }
-            
-
+            if (nav.remainingDistance <= 20)
+            {
+                position.LookAt(nav.destination);
+            }
         }
         public override void OnEnter(params object[] values)
         {
@@ -71,5 +72,29 @@ public class TeenMovement : StateMachine {
 
     }
 
+    /*public class Flee : State
+    {
+        public override void Execute()
+        {
+            if (nav.remainingDistance <= 10)
+            {
+                Vector3 target = RandomNavSphere(position.position, 100f, -1);
+                nav.SetDestination(target);
+            }
+            if (nav.remainingDistance <= 20)
+            {
+                Transform.face
+            }
+        }
+        public override void OnEnter(params object[] values)
+        {
+            nav = (NavMeshAgent)values[0];
+            position = (Transform)values[1];
+        }
+        public override void OnExit()
+        {
+
+        }
+    }*/
 
 }
