@@ -7,18 +7,23 @@ public class TeenMovement : StateMachine {
 
     Transform player;
     Transform teen;
-    UnityEngine.AI.NavMeshAgent nav;
+    NavMeshAgent nav;
     Animator anim;
-    State[] stateList;
+    bool isHit;
 
+
+    public GameObject[] waypoints;
+    public GameObject[] fleeWPs;
 
     // Use this for initialization
     void Start () {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         teen = GetComponent<Transform>();
         anim = GetComponent<Animator>();
-        setCurState(new Wander(), nav, teen);
+        setCurState(new Wander(this), nav, teen, player, waypoints, fleeWPs);
+        isHit = false;
+        //setCurState(new Flee(this), nav, teen, fleeWPs);
         
 
     }
@@ -26,40 +31,75 @@ public class TeenMovement : StateMachine {
     // Update is called once per frame
     void Update()
     {
-        getCurState().Execute();
+        if (!isHit)
+        {
+            getCurState().Execute();
+        }else
+        {
+            //transform.Translate(-Vector3.up * .5f * Time.deltaTime);
+        }
         anim.SetFloat("vely", nav.velocity.magnitude / nav.speed);
 
+    }
+
+
+    public void hit()
+    {
+        isHit = true;
+        GetComponent<NavMeshAgent>().enabled = false;
+        //GetComponent<Rigidbody>().isKinematic = true;
+        Destroy(gameObject, 4f);
     }
 
     public class Wander : State
     {
         NavMeshAgent nav;
-        Transform position;
+        Transform location;
+        Transform player;
+        GameObject[] waypoints;
+        GameObject[] fleeWPs;
+
+        public Wander(StateMachine p) : base(p)
+        {
+
+        }
 
         public override void Execute()
         {
+            if (Vector3.Distance(location.position, player.position) <= 20)
+            {
+                nav.ResetPath();
+                parent.changeState(new Flee(parent), nav, location, fleeWPs);
+                return;
+            }
             if (nav.remainingDistance <= 10)
             {
-                Vector3 target = RandomNavSphere(position.position, 100f, -1);
-                nav.SetDestination(target);
+                int index = Random.Range(0, waypoints.Length);
+                
+                nav.SetDestination(waypoints[index].transform.position);
             }
             if (nav.remainingDistance <= 20)
             {
-                position.LookAt(nav.destination);
+                location.LookAt(nav.destination);
             }
         }
         public override void OnEnter(params object[] values)
         {
             nav = (NavMeshAgent)values[0];
-            position = (Transform)values[1];
+            location = (Transform)values[1];
+            player = (Transform)values[2];
+            waypoints = (GameObject[])values[3];
+            fleeWPs = (GameObject[])values[4];
+
+            nav.speed = 1f;
         }
         public override void OnExit()
         {
 
         }
-        public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
+        public Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
         {
-            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
+            Vector3 randomDirection = Random.insideUnitSphere * distance;
 
             randomDirection += origin;
 
@@ -70,31 +110,53 @@ public class TeenMovement : StateMachine {
             return navHit.position;
         }
 
+
     }
 
-    /*public class Flee : State
+    public class Flee : State
     {
+        NavMeshAgent nav;
+        Transform location;
+        GameObject[] fleeWPs;
+
+        public Flee(StateMachine p) : base(p)
+        {
+
+        }
+
         public override void Execute()
         {
-            if (nav.remainingDistance <= 10)
+            if(nav.remainingDistance <= 5)
             {
-                Vector3 target = RandomNavSphere(position.position, 100f, -1);
-                nav.SetDestination(target);
-            }
-            if (nav.remainingDistance <= 20)
-            {
-                Transform.face
+                Destroy(parent.gameObject, 1f);
+                nav.ResetPath();
             }
         }
         public override void OnEnter(params object[] values)
         {
             nav = (NavMeshAgent)values[0];
-            position = (Transform)values[1];
+            location = (Transform)values[1];
+            fleeWPs = (GameObject[])values[2];
+
+            float minDist = int.MaxValue;
+            GameObject target = null;
+            for (int i = 0; i < fleeWPs.Length; i++)
+            {
+                float dist = Vector3.Distance(location.position, fleeWPs[i].transform.position);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    target = fleeWPs[i];
+                }
+            }
+            nav.speed = 2f;
+            nav.SetDestination(target.transform.position);
+            Debug.Log(nav.destination);
         }
         public override void OnExit()
         {
 
         }
-    }*/
+    }
 
 }

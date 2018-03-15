@@ -27,7 +27,7 @@ public class Hit : MonoBehaviour {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Projectiles")) {
             // play hit animation
             anim.SetTrigger("hit");
-
+            gameObject.GetComponent<TeenMovement>().hit();
             // change CapsuleCollider to horizontal and decrease radius so he hits the ground
             collider.radius = 0.15f;
             collider.direction = 2;

@@ -19,12 +19,11 @@ abstract public class StateMachine : MonoBehaviour
 
     }
 
-    protected void changeState(State state, params object[] values)
+    public void changeState(State state, params object[] values)
     {
         
         curState.OnExit();
-        curState = state;
-        state.OnEnter(values);
+        setCurState(state, values);
     }
 
     public void setStateList(State[] toSet)
@@ -38,7 +37,6 @@ abstract public class StateMachine : MonoBehaviour
     }
     public void setCurState(State s, params object[] values)
     {
-        Debug.Log("init called");
         curState = s;
         s.OnEnter(values);
         
@@ -46,8 +44,12 @@ abstract public class StateMachine : MonoBehaviour
 }
 
 
-public abstract class State {
-
+abstract public class State {
+    public StateMachine parent;
+    public State(StateMachine p)
+    {
+        parent = p;
+    }
     public abstract void Execute();
     public abstract void OnEnter(params object[] values);
     public abstract void OnExit();

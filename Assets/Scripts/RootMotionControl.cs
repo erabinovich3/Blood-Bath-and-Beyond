@@ -58,7 +58,7 @@ public class RootMotionControl : MonoBehaviour {
         currProjectile.angularVelocity = Vector3.zero;
 
         // add force to the thing to actually throw it
-        currProjectile.AddForce(this.transform.forward * 13f, ForceMode.VelocityChange);
+        currProjectile.AddForce(this.transform.forward * 30f, ForceMode.VelocityChange);
 
         // Destroy thing you threw after 2 seconds
         Destroy(GameObject.Find("ThrowableBall(Clone)"), 2.0f);
