@@ -5,7 +5,6 @@ using UnityEngine;
 
 abstract public class StateMachine : MonoBehaviour
 {
-    private State[] stateList;
     private State curState;
 
 
@@ -24,11 +23,6 @@ abstract public class StateMachine : MonoBehaviour
         
         curState.OnExit();
         setCurState(state, values);
-    }
-
-    public void setStateList(State[] toSet)
-    {
-        stateList = toSet;
     }
     public State getCurState()
     {

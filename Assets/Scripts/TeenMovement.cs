@@ -18,14 +18,33 @@ public class TeenMovement : StateMachine {
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        nav = GetComponent<NavMeshAgent>();
         teen = GetComponent<Transform>();
         anim = GetComponent<Animator>();
-        setCurState(new Wander(this), nav, teen, player, waypoints, fleeWPs);
+        
         isHit = false;
         //setCurState(new Flee(this), nav, teen, fleeWPs);
-        
 
+
+        List<GameObject> patrolList = new List<GameObject>();
+        List<GameObject> fleeList = new List<GameObject>();
+        GameObject[] gos = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[]; //will return an array of all GameObjects in the scene
+        foreach (GameObject go in gos)
+        {
+            if (go.layer == 12)
+            {
+                patrolList.Add(go);
+            }
+            if (go.layer == 13)
+            {
+                fleeList.Add(go);
+            }
+        }
+        waypoints = patrolList.ToArray();
+        fleeWPs = fleeList.ToArray();
+
+
+        setCurState(new Wander(this), nav, teen, player, waypoints, fleeWPs);
     }
 
     // Update is called once per frame
@@ -75,7 +94,6 @@ public class TeenMovement : StateMachine {
             if (nav.remainingDistance <= 10)
             {
                 int index = Random.Range(0, waypoints.Length);
-                
                 nav.SetDestination(waypoints[index].transform.position);
             }
             if (nav.remainingDistance <= 20)

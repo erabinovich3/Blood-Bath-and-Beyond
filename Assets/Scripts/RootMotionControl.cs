@@ -9,7 +9,7 @@ public class RootMotionControl : MonoBehaviour {
 
     private Animator anim;
     private Transform handHold;
-    private Rigidbody currProjectile;
+    public Rigidbody currProjectile;
 
     void Awake() {
         handHold = this.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/" +
@@ -29,9 +29,7 @@ public class RootMotionControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // initial thing to throw
-        currProjectile = Instantiate(projectile, handHold);
-        currProjectile.isKinematic = true;
-        currProjectile.transform.localPosition = Vector3.zero;
+        Reload();
     }
 	
 	// Update is called once per frame
@@ -72,7 +70,7 @@ public class RootMotionControl : MonoBehaviour {
         
     }
 
-    private void Reload() {
+    public void Reload() {
         // a new thing to throw
         currProjectile = Instantiate(projectile, handHold);
         currProjectile.isKinematic = true;

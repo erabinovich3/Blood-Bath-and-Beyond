@@ -1003,9 +1003,10 @@ GameObject:
   - component: {fileID: 54909816079036294}
   - component: {fileID: 136159830138684526}
   - component: {fileID: 114777356752289606}
+  - component: {fileID: 114468938293425704}
   m_Layer: 8
   m_Name: Starter_Mom
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1433,8 +1434,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1842435550663962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -24.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 121, y: 0, z: -17.2}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4913551837211736}
   - {fileID: 4105720937967136}
@@ -2258,6 +2259,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114468938293425704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842435550663962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8037b1054f4da040afd5e398934f916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
+  - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
 --- !u!114 &114777356752289606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2271,6 +2286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457,
     type: 2}
+  currProjectile: {fileID: 0}
 --- !u!136 &136159830138684526
 CapsuleCollider:
   m_ObjectHideFlags: 1

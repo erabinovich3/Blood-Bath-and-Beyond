@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 54526072793049124}
   - component: {fileID: 136629810792259560}
   - component: {fileID: 114983478799749836}
+  - component: {fileID: 114758867692346680}
   m_Layer: 8
   m_Name: Survivalist_Mom
   m_TagString: Untagged
@@ -2287,6 +2288,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114758867692346680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735461880473442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8037b1054f4da040afd5e398934f916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
+  - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
 --- !u!114 &114983478799749836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2300,6 +2315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457,
     type: 2}
+  currProjectile: {fileID: 0}
 --- !u!136 &136629810792259560
 CapsuleCollider:
   m_ObjectHideFlags: 1

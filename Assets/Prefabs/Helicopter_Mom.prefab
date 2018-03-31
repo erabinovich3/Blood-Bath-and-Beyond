@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54131511720180054}
   - component: {fileID: 136313659205019370}
   - component: {fileID: 114264980498495560}
+  - component: {fileID: 114687795598187542}
   m_Layer: 8
   m_Name: Helicopter_Mom
   m_TagString: Untagged
@@ -2271,6 +2272,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457,
     type: 2}
+  currProjectile: {fileID: 0}
+--- !u!114 &114687795598187542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049889303219206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8037b1054f4da040afd5e398934f916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
+  - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
 --- !u!136 &136313659205019370
 CapsuleCollider:
   m_ObjectHideFlags: 1

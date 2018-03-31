@@ -927,6 +927,7 @@ GameObject:
   - component: {fileID: 54578601615719228}
   - component: {fileID: 136929717606067776}
   - component: {fileID: 114994411904999328}
+  - component: {fileID: 114771433663189438}
   m_Layer: 8
   m_Name: Business_Mom
   m_TagString: Untagged
@@ -2258,6 +2259,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114771433663189438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802772529203642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8037b1054f4da040afd5e398934f916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
+  - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
 --- !u!114 &114994411904999328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2271,6 +2286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457,
     type: 2}
+  currProjectile: {fileID: 0}
 --- !u!136 &136929717606067776
 CapsuleCollider:
   m_ObjectHideFlags: 1
