@@ -11,6 +11,10 @@ public class RootMotionControl : MonoBehaviour {
     private Transform handHold;
     public Rigidbody currProjectile;
 
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
+    public float speedH = 2.0f;
+
     void Awake() {
         handHold = this.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/" +
             "mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/ProjectileHoldSpot");
@@ -34,8 +38,19 @@ public class RootMotionControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        anim.SetFloat("velx", Input.GetAxis("Horizontal"));
-        anim.SetFloat("vely", Input.GetAxis("Vertical"));
+        yaw += speedH * Input.GetAxis("Mouse X");
+        if (yaw == 0.0F)
+        {
+            yaw = 0.01F;
+        }
+        //transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        transform.Rotate(0, speedH * Input.GetAxis("Mouse X"), 0);
+        //anim.SetFloat("velx", Input.GetAxis("Mouse X"));
+        if (Input.GetAxis("Vertical") != 0.0F)
+        {
+            anim.SetFloat("vely", Input.GetAxis("Vertical"));
+        }
+        
     }
 
     private void FixedUpdate() {
@@ -56,7 +71,7 @@ public class RootMotionControl : MonoBehaviour {
         currProjectile.angularVelocity = Vector3.zero;
 
         // add force to the thing to actually throw it
-        currProjectile.AddForce(this.transform.forward * 30f, ForceMode.VelocityChange);
+        currProjectile.AddForce(this.transform.forward * 60f, ForceMode.VelocityChange);
 
         // Destroy thing you threw after 2 seconds
         Destroy(GameObject.Find("ThrowableBall(Clone)"), 2.0f);

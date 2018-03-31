@@ -54,11 +54,15 @@ public class SelectMom : MonoBehaviour {
 	}
 
 	public void GUIChanges () {
-		for (int i = 0; i < 5; i++) {
+        if (lights[0] == null)
+        {
+            return;
+        }
+		for (int i = 0; i < lights.Length; i++) {
 			if (i == momNumber) {
 				lights [i].intensity = 14;
 			} else {
-				lights [i].intensity = 7;
+				lights [i].intensity = 2;
 			}
 		}
 	}
