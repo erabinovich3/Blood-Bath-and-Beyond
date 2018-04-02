@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136558247696883276}
   - component: {fileID: 23766535472196278}
   - component: {fileID: 54634965551130820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ThrowableCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
