@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4470573, g: 0.49696028, b: 0.57509065, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -51,8 +51,8 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 9
     m_Resolution: 2
@@ -1661,6 +1661,10 @@ Prefab:
     - target: {fileID: 4250810623304488, guid: 3417981daa790f14a8062dae119693fb, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842435550663962, guid: 3417981daa790f14a8062dae119693fb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3417981daa790f14a8062dae119693fb, type: 2}
@@ -8668,6 +8672,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1334365908497998, guid: 8c01db48c9a902b45861a25ca171cfa1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c01db48c9a902b45861a25ca171cfa1, type: 2}
   m_IsPrefabParent: 0
@@ -10549,6 +10557,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1735461880473442, guid: 4850febd03b2c5641824075d33497f9d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4850febd03b2c5641824075d33497f9d, type: 2}
   m_IsPrefabParent: 0
@@ -10611,6 +10623,10 @@ Prefab:
     - target: {fileID: 1802772529203642, guid: 636a8d58554a1894cb219a10302047e5, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802772529203642, guid: 636a8d58554a1894cb219a10302047e5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 636a8d58554a1894cb219a10302047e5, type: 2}
@@ -15390,6 +15406,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1049889303219206, guid: f26617e5a32e0864a8f7329d4a06d79c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f26617e5a32e0864a8f7329d4a06d79c, type: 2}
   m_IsPrefabParent: 0
@@ -15857,7 +15877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c669239dc656477fa2e2b4e7748b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moms:
+  dismoms:
   - {fileID: 1287652564}
   - {fileID: 1001371787}
   - {fileID: 1894898085}
