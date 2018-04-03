@@ -16,12 +16,13 @@ public class CameraControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameObject temp = GameObject.Find("MomSelect");
-        SelectMom momScript = temp.GetComponent<SelectMom>();
-        int sM = momScript.momNumber;
+		//depends on game instead of calling on another script
+		foreach (GameObject m in moms) {
+			if (m.activeSelf) {
+				player = m;
+			} // set the player to the selected mom
 
-        player = moms[sM]; // set the player to the selected mom
-
+		}
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         offset = player.transform.position - transform.position;
     }
