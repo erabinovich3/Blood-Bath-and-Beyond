@@ -2270,9 +2270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65302539e6ceb9d40932776f06288b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457,
-    type: 2}
-  currProjectile: {fileID: 0}
+  speedH: 2
 --- !u!114 &114687795598187542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2287,6 +2285,9 @@ MonoBehaviour:
   weaponList:
   - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
   - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
+  reloadCD: 5
+  projectile: {fileID: 0}
+  currProjectile: {fileID: 0}
 --- !u!136 &136313659205019370
 CapsuleCollider:
   m_ObjectHideFlags: 1
