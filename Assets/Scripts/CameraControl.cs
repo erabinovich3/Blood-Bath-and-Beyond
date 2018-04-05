@@ -34,6 +34,18 @@ public class CameraControl : MonoBehaviour
         float desiredAngle = player.transform.eulerAngles.y;
         Quaternion rotation = Quaternion.Euler(0, desiredAngle % 360, 0);
         transform.position = Vector3.Lerp(transform.position, player.transform.position - (rotation * offset * cam_multiplier), smoothing * Time.deltaTime);
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, desiredAngle % 360, 0), smoothing * Time.deltaTime);
+        //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30 - (cam_multiplier - 1) * 20, desiredAngle % 360, 0), 2f * Time.deltaTime);
+		//transform.eulerAngles = new Vector3(30 + (cam_multiplier - 1) * 5, desiredAngle % 360, 0);
+		
     }
+	void Update() {
+		Animator player_animator = player.GetComponent<Animator>();
+        float cam_multiplier = Mathf.Clamp(Math.Abs(player_animator.GetFloat("vely")) + 1, 1.0F, 1.5F);
+        float desiredAngle = player.transform.eulerAngles.y;
+		Quaternion rotation = Quaternion.Euler(0, desiredAngle % 360, 0);
+
+		transform.position = Vector3.Lerp(transform.position, player.transform.position - (rotation * offset * cam_multiplier), smoothing * Time.deltaTime);
+
+		transform.eulerAngles = new Vector3(30 + (cam_multiplier - 1) * 5, desiredAngle % 360, 0);
+	}
 }
