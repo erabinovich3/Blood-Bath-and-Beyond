@@ -13,6 +13,8 @@ public class WeaponManager : MonoBehaviour {
     RootMotionControl movement;
     int curIndex = 0;
     private float reloadTimer;
+    private GameObject soap;
+    private GameObject tampon;
 
     void Awake () {
 
@@ -24,7 +26,11 @@ public class WeaponManager : MonoBehaviour {
         {
             Debug.LogError("projectile has not been assigned a value.");
         }
-        
+
+        soap = GameObject.Find("Soap Panel");
+        tampon = GameObject.Find("Tampon Panel");
+        tampon.SetActive(false);
+
     }
 
     void Start()
@@ -53,6 +59,11 @@ public class WeaponManager : MonoBehaviour {
             if (curIndex >= weaponList.Length)
             {
                 curIndex = 0;
+                soap.SetActive(true);
+                tampon.SetActive(false);
+            } else {
+                soap.SetActive(false);
+                tampon.SetActive(true);
             }
             if (currProjectile != null ) {
                 Destroy(currProjectile.gameObject);

@@ -38,4 +38,8 @@ public class Timer : MonoBehaviour {
 
         return display;
     }
+
+    public void addTime() {
+        timeLeft += 15f;
+    }
 }

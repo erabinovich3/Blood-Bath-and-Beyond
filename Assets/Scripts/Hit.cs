@@ -7,6 +7,7 @@ public class Hit : MonoBehaviour {
 
     private Animator anim;
     private CapsuleCollider collider;
+    private GameManager manager;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -20,6 +21,8 @@ public class Hit : MonoBehaviour {
         if (collider == null) {
             Debug.LogError("Capsule Collider not found");
         }
+
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -28,6 +31,10 @@ public class Hit : MonoBehaviour {
             // play hit animation
             anim.SetTrigger("hit");
             gameObject.GetComponent<TeenMovement>().hit();
+
+            // add to score
+            manager.AddScore(20);
+
             // change CapsuleCollider to horizontal and decrease radius so he hits the ground
             collider.radius = 0.15f;
             collider.direction = 2;
