@@ -1641,11 +1641,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a08be49cd19c9914a805d00a6c7136e0, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &189177880 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4766234987001630, guid: a08be49cd19c9914a805d00a6c7136e0,
-    type: 2}
-  m_PrefabInternal: {fileID: 189177879}
 --- !u!1 &202480494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,6 +3201,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 350910190}
   m_Mesh: {fileID: 4300000, guid: 46e2406d597f43e498322a545c329207, type: 3}
+--- !u!4 &357180430 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4672317747476766, guid: a08be49cd19c9914a805d00a6c7136e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 189177879}
 --- !u!1 &363147399
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,10 +5008,10 @@ RectTransform:
   m_Father: {fileID: 1123346639}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 103.80698, y: -88.33926}
-  m_SizeDelta: {x: -410, y: -334}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 103.80698, y: -88.339264}
+  m_SizeDelta: {x: 160, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519435180
 MonoBehaviour:
@@ -5394,10 +5394,10 @@ RectTransform:
   m_Father: {fileID: 1123346639}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015258789, y: 35.35}
-  m_SizeDelta: {x: -376.2, y: -293.3}
+  m_SizeDelta: {x: 193.79999, y: 86.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544470944
 MonoBehaviour:
@@ -12932,10 +12932,10 @@ RectTransform:
   m_Father: {fileID: 1123346639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -98, y: -88.339264}
-  m_SizeDelta: {x: -410, y: -334}
+  m_SizeDelta: {x: 160, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500375023
 MonoBehaviour:
@@ -13064,7 +13064,7 @@ Transform:
   - {fileID: 1291586934}
   - {fileID: 1829509088}
   - {fileID: 1325895553}
-  - {fileID: 189177880}
+  - {fileID: 357180430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
