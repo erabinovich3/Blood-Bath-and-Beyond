@@ -14,10 +14,12 @@ public class TeenMovement : StateMachine {
 
     public GameObject[] waypoints;
     public GameObject[] fleeWPs;
-
+    
     // Use this for initialization
     void Start () {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+		
+		player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<NavMeshAgent>();
         teen = GetComponent<Transform>();
         anim = GetComponent<Animator>();

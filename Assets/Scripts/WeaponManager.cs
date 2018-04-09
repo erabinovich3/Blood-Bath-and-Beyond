@@ -16,7 +16,12 @@ public class WeaponManager : MonoBehaviour {
     private GameObject soap;
     private GameObject tampon;
 
+    private AudioSource source;
+
+
     void Awake () {
+
+        source = GetComponent<AudioSource>();
 
         handHold = this.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/" +
             "mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/ProjectileHoldSpot");
@@ -46,6 +51,7 @@ public class WeaponManager : MonoBehaviour {
         reloadTimer += Time.deltaTime;
         if (currProjectile != null && Input.GetButtonDown("Fire1"))
         {
+            source.Play();
             anim.SetTrigger("throw");
         }
         else
@@ -72,13 +78,15 @@ public class WeaponManager : MonoBehaviour {
 
             //Debug.Log(currProjectile);
             projectile = weaponList[curIndex];
-            Invoke("Reload", 0.75f);
+            Invoke("Reload", 0.1f);
 
         }
     }
 
     private void Throw()
     {
+        // sound
+        
         // release the thing
         currProjectile.transform.SetParent(null);
         // make thing under force control
@@ -88,7 +96,7 @@ public class WeaponManager : MonoBehaviour {
         currProjectile.angularVelocity = Vector3.zero;
 
         // add force to the thing to actually throw it
-        currProjectile.AddForce(this.transform.forward * 60f, ForceMode.VelocityChange);
+        currProjectile.AddForce(this.transform.forward * 80f, ForceMode.VelocityChange);
 
         // Destroy thing you threw after 2 seconds
         Destroy(currProjectile.gameObject,  2.0f);

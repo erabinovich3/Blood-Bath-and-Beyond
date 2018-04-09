@@ -8,8 +8,11 @@ public class Hit : MonoBehaviour {
     private Animator anim;
     private CapsuleCollider collider;
     private GameManager manager;
+    private AudioSource source;
 
     private void Awake() {
+        source = GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
 
         if (anim == null) {
@@ -28,6 +31,8 @@ public class Hit : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         // make sure a projectile hit teen, not something else
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Projectiles")) {
+            //play hit noise
+            source.Play();
             // play hit animation
             anim.SetTrigger("hit");
             gameObject.GetComponent<TeenMovement>().hit();
