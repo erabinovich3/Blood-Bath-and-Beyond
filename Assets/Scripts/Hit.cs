@@ -37,8 +37,21 @@ public class Hit : MonoBehaviour {
             anim.SetTrigger("hit");
             gameObject.GetComponent<TeenMovement>().hit();
 
-            // add to score
-            manager.AddScore(20);
+            // add to score only if correct weapon, else take time
+            if (this.gameObject.tag == "Boy") {
+                if (collision.gameObject.tag == "Soap") { // right thing, add points
+                    manager.AddScore(20);
+                } else { // wrong thing, subtract time
+                    manager.AddScore(-20);
+                }
+            } else if (this.gameObject.tag == "Girl") {
+                if (collision.gameObject.tag == "Tampon") { // right thing, add points
+                    manager.AddScore(20);
+                }
+                else { // wrong thing, subtract time
+                    manager.AddScore(-20);
+                }
+            }
 
             // change CapsuleCollider to horizontal and decrease radius so he hits the ground
             collider.radius = 0.15f;
