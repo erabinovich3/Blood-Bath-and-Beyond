@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
     public void AddScore(int num) {
         Debug.Log("Add Score called");
         score += num;
-        scoreView.text = "" + score;
+        
 
         if (scoreAnim == null) {
             scoreAnim = GameObject.Find("Chips").GetComponentInChildren<Animator>();
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour {
         } else { // gaining points
             scoreAnim.SetTrigger("nice");
         }
+
+        scoreView.text = "" + score; // update score display
 
         // when you hit something, there's a 50/50 chance for more wine to spawn
         if (Random.Range(0,2) == 1) {
