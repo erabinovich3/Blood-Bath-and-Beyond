@@ -15,17 +15,28 @@ public class RootMotionControl : MonoBehaviour {
     private float pitch = 0.0f;
     public float speedH = 2.0f;
 
+    private AudioSource source;
+
+
     void Awake() {
         anim = GetComponent<Animator>();
+        source = GetComponents<AudioSource>()[1];
 
         if (anim == null) {
             Debug.LogError("Animator not found");
         }
+
+    }
+    public void Step()
+    {
+        //source.Stop();
+        source.Play();
+        Debug.Log("PrintEvent: step called at: " + Time.time);
     }
 
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         yaw += speedH * Input.GetAxis("Mouse X");
         if (yaw == 0.0F)
         {

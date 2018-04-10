@@ -158,12 +158,12 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 10.518907 mm\n\t'mixamorig:LeftLeg' : position error = 49.082088
-      mm\n\t'mixamorig:LeftFoot' : position error = 42.988617 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 9.311837 mm\n\t'mixamorig:RightUpLeg' : position error =
-      10.685608 mm\n\t'mixamorig:RightLeg' : position error = 48.851116 mm\n\t'mixamorig:RightFoot'
-      : position error = 43.160427 mm\n\t'mixamorig:RightToeBase' : position error
-      = 9.653029 mm\n"
+      : position error = 8.896132 mm\n\t'mixamorig:LeftLeg' : position error = 2.444357
+      mm\n\t'mixamorig:LeftFoot' : position error = 3.618200 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 8.995885 mm\n\t'mixamorig:RightUpLeg' : position error =
+      8.963655 mm\n\t'mixamorig:RightLeg' : position error = 2.565905 mm\n\t'mixamorig:RightFoot'
+      : position error = 3.570521 mm\n\t'mixamorig:RightToeBase' : position error
+      = 9.421916 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -200,7 +200,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.2928643
+        functionName: Step
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.82163745
+        functionName: Step
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
