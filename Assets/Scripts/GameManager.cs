@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         score = 0;
+        PlayerPrefs.SetInt("Score", 0); // reset score for end scene
         timer = GameObject.Find("Timer").GetComponent<Timer>();
 
         if (timer == null) {
@@ -53,7 +54,8 @@ public class GameManager : MonoBehaviour {
             scoreAnim.SetTrigger("nice");
         }
 
-        scoreView.text = "" + score; // update score display
+        scoreView.text = "" + score + " / 100"; // update score display
+        PlayerPrefs.SetInt("Score", score); // save score for end scene
 
         // when you hit something, there's a 50/50 chance for more wine to spawn
         if (Random.Range(0,2) == 1) {

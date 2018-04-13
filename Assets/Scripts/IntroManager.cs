@@ -36,11 +36,11 @@ public class IntroManager : MonoBehaviour {
 
                 Invoke("DisplayText", 1f); // wait a second before displaying text
             } else if (state == 1) {
-                //todo
                 instructions.text = "Gameplay\n\nUse WASD or the arrow keys to move your mom, and control her direction with the mouse."
-                    + "\n\nClick to throw and bring hygiene to the unkempt youth before time runs out, but be sure to use the left Alt key to switch to the right ammo!"
+                    + "\n\nClick to throw and bring hygiene to the unkempt youth, but be sure to use the left Alt key to switch to the right ammo!"
                     + "\n\nThrowing the incorrect thing at a teen results in a loss of points, and the moms need all the help they can get!"
-                    + "\n\n(Don't forget to look around for a special treat just for moms, it'll add to your time!)";
+                    + "\n\n(Don't forget to look around for a special treat just for moms, it'll add to your time!)"
+                    + "\n\nReach the target score before time runs out to save the youth from their unhygienic ways!";
                 state++;
             } else if (state == 2) {
                 instructions.text = "\n\n\nCalling a PTA meeting...";
