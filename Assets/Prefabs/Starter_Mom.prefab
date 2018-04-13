@@ -2273,7 +2273,7 @@ MonoBehaviour:
   weaponList:
   - {fileID: 54357899997995872, guid: 3e579356672728d4eb936fe0597d1457, type: 2}
   - {fileID: 54634965551130820, guid: b6000e98fe344294881374ee67276ce5, type: 2}
-  reloadCD: 5
+  reloadCD: 0
   projectile: {fileID: 0}
   currProjectile: {fileID: 0}
 --- !u!114 &114777356752289606

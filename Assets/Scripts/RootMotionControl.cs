@@ -31,7 +31,7 @@ public class RootMotionControl : MonoBehaviour {
     {
         //source.Stop();
         source.Play();
-        Debug.Log("PrintEvent: step called at: " + Time.time);
+       // Debug.Log("PrintEvent: step called at: " + Time.time);
     }
 
 

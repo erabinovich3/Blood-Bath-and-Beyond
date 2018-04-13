@@ -10,16 +10,17 @@ public class TeenMovement : StateMachine {
     NavMeshAgent nav;
     Animator anim;
     bool isHit;
-
+    public Vector3 velocity;
+    public Vector3 lastPosition;
 
     public GameObject[] waypoints;
     public GameObject[] fleeWPs;
     
     // Use this for initialization
     void Start () {
-
-		
-		player = GameObject.FindGameObjectWithTag("Player").transform;
+        lastPosition = transform.position;
+        velocity = Vector3.zero;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<NavMeshAgent>();
         teen = GetComponent<Transform>();
         anim = GetComponent<Animator>();
@@ -52,6 +53,9 @@ public class TeenMovement : StateMachine {
     // Update is called once per frame
     void Update()
     {
+        velocity = transform.position - lastPosition;
+        lastPosition = transform.position;
+
         if (!isHit)
         {
             getCurState().Execute();

@@ -18,6 +18,8 @@ public class WeaponManager : MonoBehaviour {
 
     private AudioSource source;
 
+    protected int SOAP_INDEX = 0;
+    protected int TAMPON_INDEX = 1;
 
     void Awake () {
 
@@ -85,8 +87,44 @@ public class WeaponManager : MonoBehaviour {
 
     private void Throw()
     {
-        // sound
+        // find closest enemy
+        GameObject[] boys = GameObject.FindGameObjectsWithTag("Boy");
+        GameObject[] girls = GameObject.FindGameObjectsWithTag("Girl");
+        float min_dist = float.MaxValue;
+        GameObject closest = null;
+        bool targetChosen = false;
+        foreach(GameObject o in boys)
+        {
+            float dist = Vector3.Distance(o.transform.position, this.transform.position);
+            float angle = Vector3.Angle((o.transform.position - this.transform.position).normalized, transform.forward);
+            if (dist < min_dist && angle < 20f)
+            {
+                min_dist = dist;
+                closest = o;
+                targetChosen = true;
+            }
+        }
+        foreach (GameObject o in girls)
+        {
+            float dist = Vector3.Distance(o.transform.position, this.transform.position);
+            float angle = Vector3.Angle((o.transform.position - this.transform.position).normalized, transform.forward);
+            if (dist < min_dist && angle < 20f)
+            {
+                min_dist = dist;
+                closest = o;
+                targetChosen = true;
+            }
+        }
+        Vector3 aimAt = Vector3.zero; Vector3 aim = Vector3.zero;
+        if (targetChosen) {
+             aimAt = closest.transform.position + (min_dist / 80f) * closest.GetComponent<TeenMovement>().velocity;
+             aim = aimAt - this.transform.position;
+        }
         
+
+
+
+
         // release the thing
         currProjectile.transform.SetParent(null);
         // make thing under force control
@@ -96,7 +134,18 @@ public class WeaponManager : MonoBehaviour {
         currProjectile.angularVelocity = Vector3.zero;
 
         // add force to the thing to actually throw it
-        currProjectile.AddForce(this.transform.forward * 80f, ForceMode.VelocityChange);
+
+        if (targetChosen)
+        {
+            Debug.Log(aim);
+            currProjectile.AddForce(aim.normalized * 60f, ForceMode.VelocityChange);
+
+        } else
+        {
+           currProjectile.AddForce(this.transform.forward * 80f, ForceMode.VelocityChange);
+
+        }
+
 
         // Destroy thing you threw after 2 seconds
         Destroy(currProjectile.gameObject,  2.0f);
