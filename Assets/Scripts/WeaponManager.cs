@@ -117,7 +117,7 @@ public class WeaponManager : MonoBehaviour {
         }
         Vector3 aimAt = Vector3.zero; Vector3 aim = Vector3.zero;
         if (targetChosen) {
-             aimAt = closest.transform.position + (min_dist / 80f) * closest.GetComponent<TeenMovement>().velocity;
+             aimAt = closest.transform.position + (min_dist / 50f) * closest.GetComponent<TeenMovement>().velocity;
              aim = aimAt - this.transform.position;
         }
         
@@ -127,6 +127,7 @@ public class WeaponManager : MonoBehaviour {
 
         // release the thing
         currProjectile.transform.SetParent(null);
+        currProjectile.transform.position = new Vector3(currProjectile.transform.position.x, 10f, currProjectile.transform.position.z);
         // make thing under force control
         currProjectile.isKinematic = false;
 
@@ -138,11 +139,11 @@ public class WeaponManager : MonoBehaviour {
         if (targetChosen)
         {
             Debug.Log(aim);
-            currProjectile.AddForce(aim.normalized * 60f, ForceMode.VelocityChange);
+            currProjectile.AddForce(aim.normalized * 100f, ForceMode.VelocityChange);
 
         } else
         {
-           currProjectile.AddForce(this.transform.forward * 80f, ForceMode.VelocityChange);
+           currProjectile.AddForce(this.transform.forward * 100f, ForceMode.VelocityChange);
 
         }
 
