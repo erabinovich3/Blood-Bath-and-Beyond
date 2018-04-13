@@ -18,7 +18,7 @@ public class FinalScore : MonoBehaviour {
         score.text = "Final Score: " + PlayerPrefs.GetInt("Score") + " / 100";
 
         // change message if player won
-        if (PlayerPrefs.GetInt("Score") >= 10) {
+        if (PlayerPrefs.GetInt("Score") >= 100) {
             message.text = "We're saved!\nYou successfully sanitized the youth!";
             replaymsg.text = "Start New Game";
         }
