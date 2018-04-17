@@ -47,7 +47,7 @@ public class TeenMovement : StateMachine {
         fleeWPs = fleeList.ToArray();
 
 
-        setCurState(new Wander(this), nav, teen, player, waypoints, fleeWPs);
+        setCurState(new Wander(this), nav, teen, player, waypoints, fleeWPs, anim);
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class TeenMovement : StateMachine {
         {
             //transform.Translate(-Vector3.up * .5f * Time.deltaTime);
         }
-        anim.SetFloat("vely", nav.velocity.magnitude / nav.speed);
+        
 
     }
 
@@ -83,6 +83,7 @@ public class TeenMovement : StateMachine {
         Transform player;
         GameObject[] waypoints;
         GameObject[] fleeWPs;
+        Animator anim;
 
         public Wander(StateMachine p) : base(p)
         {
@@ -94,7 +95,7 @@ public class TeenMovement : StateMachine {
             if (Vector3.Distance(location.position, player.position) <= 20)
             {
                 nav.ResetPath();
-                parent.changeState(new Flee(parent), nav, location, fleeWPs);
+                parent.changeState(new Flee(parent), nav, location, fleeWPs, anim);
                 return;
             }
             if (nav.remainingDistance <= 10)
@@ -106,6 +107,7 @@ public class TeenMovement : StateMachine {
             {
                 location.LookAt(nav.destination);
             }
+            anim.SetFloat("vely", nav.velocity.magnitude / nav.speed / 2);
         }
         public override void OnEnter(params object[] values)
         {
@@ -114,7 +116,9 @@ public class TeenMovement : StateMachine {
             player = (Transform)values[2];
             waypoints = (GameObject[])values[3];
             fleeWPs = (GameObject[])values[4];
+            anim = (Animator)values[5];
 
+            //anim.speed = .5f;
             nav.speed = 1f;
         }
         public override void OnExit()
@@ -142,6 +146,7 @@ public class TeenMovement : StateMachine {
         NavMeshAgent nav;
         Transform location;
         GameObject[] fleeWPs;
+        Animator anim;
 
         public Flee(StateMachine p) : base(p)
         {
@@ -155,12 +160,14 @@ public class TeenMovement : StateMachine {
                 Destroy(parent.gameObject, 1f);
                 nav.ResetPath();
             }
+            anim.SetFloat("vely", nav.velocity.magnitude / nav.speed);
         }
         public override void OnEnter(params object[] values)
         {
             nav = (NavMeshAgent)values[0];
             location = (Transform)values[1];
             fleeWPs = (GameObject[])values[2];
+            anim = (Animator)values[3];
 
             float minDist = int.MaxValue;
             GameObject target = null;
@@ -173,7 +180,7 @@ public class TeenMovement : StateMachine {
                     target = fleeWPs[i];
                 }
             }
-            nav.speed = 2f;
+            nav.speed = 3f;
             nav.SetDestination(target.transform.position);
             Debug.Log(nav.destination);
         }

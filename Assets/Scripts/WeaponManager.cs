@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour {
     public Rigidbody[] weaponList;
-    public float reloadCD = 5;
+    public float reloadCD = 0f;
     public Rigidbody projectile;
     public Rigidbody currProjectile;
 

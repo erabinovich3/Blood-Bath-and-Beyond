@@ -1736,7 +1736,7 @@ Prefab:
     - target: {fileID: 114468938293425704, guid: 3417981daa790f14a8062dae119693fb,
         type: 2}
       propertyPath: reloadCD
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114468938293425704, guid: 3417981daa790f14a8062dae119693fb,
         type: 2}
@@ -17223,7 +17223,7 @@ Prefab:
     - target: {fileID: 114253284028613216, guid: 40a588fc25e14854abb65c5802c5212e,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1638898483346636, guid: 40a588fc25e14854abb65c5802c5212e, type: 2}
       propertyPath: m_IsActive
