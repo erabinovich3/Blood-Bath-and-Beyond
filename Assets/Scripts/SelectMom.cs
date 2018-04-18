@@ -20,47 +20,43 @@ public class SelectMom : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-		//Select mom and make necessary GUI changes
-		if (!momSelected) {
-			if (Input.GetKeyDown (KeyCode.Space)) {
-				momSelected = true;
-
-			} else {
-				if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-					momNumber = (momNumber + 4) % 5;
-				} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
-					momNumber = (momNumber + 1) % 5;
-				}
-				GUIChanges ();
-			}
-		} else {
-			//Once mom is selected, move to the main scene
-
-			foreach (GameObject g in enablingToSwitch) {
-				g.SetActive (!g.activeSelf);
-			}
-
-			for (int i = 0; i < 5; i++) {
-				if (i == momNumber) {
-					dismoms [i].SetActive (true);
-				} else {
-					dismoms [i].SetActive(false);
-				}
-			}
-				
-
-			Destroy (GameObject.Find ("MomSelect"));
-		}
+        DontDestroyOnLoad(transform.gameObject);
+        		
+        
+        
 
 
-	}
+    }
 
-	public void GUIChanges () {
+    // Update is called once per frame
+    void Update()
+    {
+
+        //Select mom and make necessary GUI changes
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("level1");
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                momNumber = (momNumber + 4) % 5;
+                string logMessage = "The number is " + momNumber + ".";
+                Debug.Log(logMessage);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                momNumber = (momNumber + 1) % 5;
+                string logMessage = "The number is " + momNumber + ".";
+                Debug.Log(logMessage);
+            }
+            GUIChanges();
+
+        }
+    }
+
+    public void GUIChanges () {
         if (lights[0] == null)
         {
             return;
