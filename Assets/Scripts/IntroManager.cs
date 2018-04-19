@@ -44,7 +44,7 @@ public class IntroManager : MonoBehaviour {
                 state++;
             } else if (state == 2) {
                 instructions.text = "\n\n\nCalling a PTA meeting...";
-                SceneManager.LoadScene("level1");
+                SceneManager.LoadScene("chooseMom");
             }
             
         }
