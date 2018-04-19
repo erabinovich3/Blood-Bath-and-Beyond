@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/intro.unity
     guid: cb532bcef79595c45998654f5f26a489
   - enabled: 1
+    path: Assets/Scenes/chooseMom.unity
+    guid: 33dab6cdb6fab9943b3490781ec9962d
+  - enabled: 1
     path: Assets/Scenes/level1.unity
     guid: 3ab95ee04a861b44db154acb95d69dc1
   - enabled: 1

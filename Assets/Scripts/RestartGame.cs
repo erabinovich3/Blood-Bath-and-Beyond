@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class RestartGame : MonoBehaviour {
 
 	public void GameRestarter() {
-		SceneManager.LoadScene ("level1");
+		SceneManager.LoadScene ("chooseMom");
 	}
 }
