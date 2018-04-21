@@ -6,13 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
+    public AudioClip gain;
+
     float timeLeft = 120.0f;
     Text time;
+    Animator anim;
+    AudioSource source;
 
 	// Use this for initialization
 	void Start () {
         time = GetComponent<Text>();
         time.text = displayTime();
+
+        anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +47,8 @@ public class Timer : MonoBehaviour {
     }
 
     public void addTime() {
+        anim.SetTrigger("add-time"); // trigger added time animation
         timeLeft += 15f;
+        source.PlayOneShot(gain);
     }
 }

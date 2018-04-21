@@ -31,24 +31,29 @@ public class Hit : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         // make sure a projectile hit teen, not something else
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Projectiles")) {
+            // change layer mask of projectile to prevent multiple hits
+            //collision.collider.gameObject.layer = LayerMask.NameToLayer("Default");
+            // change layer mask of teen to prevent bugs with mom collision and multiple hits
+            this.gameObject.layer = LayerMask.NameToLayer("Clean-Teen");
+
             //play hit noise
             source.Play();
             // play hit animation
             anim.SetTrigger("hit");
             gameObject.GetComponent<TeenMovement>().hit();
 
-            // add to score only if correct weapon, else take time
+            // add to score only if correct weapon, else take score
             if (this.gameObject.tag == "Boy") {
                 if (collision.gameObject.tag == "Soap") { // right thing, add points
                     manager.AddScore(20);
-                } else { // wrong thing, subtract time
+                } else { // wrong thing, subtract score
                     manager.AddScore(-20);
                 }
             } else if (this.gameObject.tag == "Girl") {
                 if (collision.gameObject.tag == "Tampon") { // right thing, add points
                     manager.AddScore(20);
                 }
-                else { // wrong thing, subtract time
+                else { // wrong thing, subtract score
                     manager.AddScore(-20);
                 }
             }

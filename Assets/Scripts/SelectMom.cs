@@ -33,7 +33,7 @@ public class SelectMom : MonoBehaviour {
     {
 
         //Select mom and make necessary GUI changes
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Submit"))
         {
             SceneManager.LoadScene("level1");
         }
