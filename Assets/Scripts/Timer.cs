@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour {
         // end game when timer runs out
         if (timeLeft <= 0) {
             SceneManager.LoadScene("endScreen");
+            GameController.controller.gamesPlayed++;
         }
 	}
 
