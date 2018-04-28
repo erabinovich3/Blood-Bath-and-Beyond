@@ -60,7 +60,7 @@ public class WeaponManager : MonoBehaviour {
         {
             //anim.SetBool("throw", false);
         }
-        if (weaponList.Length > 1 && Input.GetButtonDown("Fire2") && reloadTimer >= reloadCD)
+        if (weaponList.Length > 1 && Input.GetButtonDown("Jump") && reloadTimer >= reloadCD)
         {
             reloadTimer = 0f;
             curIndex++;

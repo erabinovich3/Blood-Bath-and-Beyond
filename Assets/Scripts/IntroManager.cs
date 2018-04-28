@@ -12,6 +12,7 @@ public class IntroManager : MonoBehaviour {
     private Text instructions;
     private Text enter;
     private int state = 0;
+	private RawImage instrImage;
 
 	// Use this for initialization
 	void Start () {
@@ -20,29 +21,28 @@ public class IntroManager : MonoBehaviour {
         subtitleAnim = GameObject.Find("Subtitle").GetComponent<Animator>();
         instructions = GameObject.Find("Instructions").GetComponent<Text>();
         enter = GameObject.Find("Enter").GetComponent<Text>();
+		instrImage = GameObject.Find("RawImage").GetComponent<RawImage>();
 
-        instructions.enabled = false;
+		instructions.enabled = false;
+		instrImage.enabled = false;
         enter.enabled = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Submit")) {
-            if (state == 0) {
-                bgAnim.SetTrigger("fade_in");
-                titleAnim.SetTrigger("fade");
-                subtitleAnim.SetTrigger("fade");
-                state++;
-
-                Invoke("DisplayText", 1f); // wait a second before displaying text
-            } else if (state == 1) {
-                instructions.text = "Gameplay\n\nUse WASD or the arrow keys to move your mom, and control her direction with the mouse."
-                    + "\n\nClick to throw and bring hygiene to the unkempt youth, but be sure to use the left Alt key to switch to the right ammo!"
-                    + "\n\nThrowing the incorrect thing at a teen results in a loss of points, and the moms need all the help they can get!"
-                    + "\n\n(Don't forget to look around for a special treat just for moms, it'll add to your time!)"
-                    + "\n\nReach the target score before time runs out to save the youth from their unhygienic ways!";
-                state++;
-            } else if (state == 2) {
+			if (state == 0) {
+				bgAnim.SetTrigger ("fade_in");
+				titleAnim.SetTrigger ("fade");
+				subtitleAnim.SetTrigger ("fade");
+				state++;
+				Invoke ("DisplayText", 1f); // wait a second before displaying text
+			} else if (state == 1) {
+				instructions.text = "";
+				instrImage.enabled = true;
+				state++;
+			} else if (state == 2) {
+				instrImage.enabled = false;
                 instructions.text = "\n\n\nCalling a PTA meeting...";
                 SceneManager.LoadScene("chooseMom");
             }

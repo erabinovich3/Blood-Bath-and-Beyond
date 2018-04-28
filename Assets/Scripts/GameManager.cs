@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour {
         score = 0;
         PlayerPrefs.SetInt("Score", 0); // reset score for end scene
 
+		if (!PlayerPrefs.HasKey ("Highscore")) {
+			PlayerPrefs.SetInt ("Highscore", 0);
+		}
+
         sound = 0;
 
         timer = GameObject.Find("Timer").GetComponent<Timer>();
