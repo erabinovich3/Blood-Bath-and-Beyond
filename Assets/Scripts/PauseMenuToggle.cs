@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuToggle : MonoBehaviour {
 	
 	public Button instB;
+	public Button quitB;
 	public Button retuB;
 	private RawImage instrImage;
 	float timer = 0;
@@ -32,9 +33,15 @@ public class PauseMenuToggle : MonoBehaviour {
         paused = false;
 		showingInstructions = true;
 		instB.onClick.AddListener (showInstructions);
+		quitB.onClick.AddListener (quitGame);
 		retuB.onClick.AddListener (returnToSelectMom);
+
+
 		instB.gameObject.SetActive(false);
+		quitB.gameObject.SetActive(false);
 		retuB.gameObject.SetActive(false);
+
+
 		instrImage = GameObject.Find("RawImage").GetComponent<RawImage>();
 		instrImage.gameObject.SetActive(false);
 	}
@@ -47,6 +54,7 @@ public class PauseMenuToggle : MonoBehaviour {
 				showingInstructions = false;
 			} else if (paused) {
 				instB.gameObject.SetActive(false);
+				quitB.gameObject.SetActive(false);
 				retuB.gameObject.SetActive(false);
 				paused = false;
                 LockCursor();
@@ -54,6 +62,7 @@ public class PauseMenuToggle : MonoBehaviour {
 
 			} else {
 				instB.gameObject.SetActive(true);
+				quitB.gameObject.SetActive(true);
 				retuB.gameObject.SetActive(true);
 				paused = true;
                 UnlockCursor();
@@ -69,6 +78,10 @@ public class PauseMenuToggle : MonoBehaviour {
 
 	public void returnToSelectMom() {
 		SceneManager.LoadScene("chooseMom");
+	}
+
+	public void quitGame() {
+		Application.Quit ();
 	}
 
 }
