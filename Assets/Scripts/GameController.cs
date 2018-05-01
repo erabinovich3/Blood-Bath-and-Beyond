@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
     public static GameController controller;
 
     public int[] highScores;
-    public bool[] unlockedMoms;
+    public bool[] unlockedMoms; 
     public bool[] unlockedLevels;
     public int gamesPlayed;
 
@@ -19,7 +19,20 @@ public class GameController : MonoBehaviour {
     private BinaryFormatter bf;
 
 
-	void Awake () {
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
+
+
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void Awake () {
 		if (controller == null)
         {
             DontDestroyOnLoad(this);
@@ -34,7 +47,8 @@ public class GameController : MonoBehaviour {
 
     void Start()
     {
-        
+        //LockCursor();
+
         bf = new BinaryFormatter();
         numLevels = 1;
         numMoms = 5;

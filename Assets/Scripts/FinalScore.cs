@@ -11,9 +11,20 @@ public class FinalScore : MonoBehaviour {
 	private Text highscore;
 	private int minScore = 100;
 
-	// Use this for initialization
-	void Start () {
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
 
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    // Use this for initialization
+    void Start () {
+       
 
         message = GameObject.Find("GameOverText").GetComponent<Text>();
         replaymsg = GameObject.Find("StartNewGameButton").GetComponentInChildren<Text>();

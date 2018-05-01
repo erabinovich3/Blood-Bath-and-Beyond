@@ -14,9 +14,22 @@ public class PauseMenuToggle : MonoBehaviour {
 	bool paused;
 	bool showingInstructions;
 
-	// Use this for initialization
-	void Start () {
-		paused = false;
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    // Use this for initialization
+    void Start () {
+
+        paused = false;
 		showingInstructions = true;
 		instB.onClick.AddListener (showInstructions);
 		retuB.onClick.AddListener (returnToSelectMom);
@@ -36,12 +49,14 @@ public class PauseMenuToggle : MonoBehaviour {
 				instB.gameObject.SetActive(false);
 				retuB.gameObject.SetActive(false);
 				paused = false;
-				Time.timeScale = 1f;
+                LockCursor();
+                Time.timeScale = 1f;
 
 			} else {
 				instB.gameObject.SetActive(true);
 				retuB.gameObject.SetActive(true);
 				paused = true;
+                UnlockCursor();
 				Time.timeScale = 0f;
 			}
 		}

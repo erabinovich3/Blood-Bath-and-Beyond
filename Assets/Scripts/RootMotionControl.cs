@@ -49,7 +49,8 @@ public class RootMotionControl : MonoBehaviour {
         {
             anim.SetFloat("vely", Input.GetAxis("Vertical"));
         }
-        
+        anim.SetFloat("velx", Input.GetAxis("Horizontal"));
+
     }
 
 
