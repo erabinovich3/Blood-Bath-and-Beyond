@@ -44,7 +44,7 @@ public class IntroManager : MonoBehaviour {
 			} else if (state == 2) {
 				instrImage.enabled = false;
                 instructions.text = "\n\n\nCalling a PTA meeting...";
-                SceneManager.LoadScene("chooseMom");
+                SceneManager.LoadScene("startMenu");
             }
             
         }
