@@ -33,7 +33,9 @@ public class GameController : MonoBehaviour {
     }
 
     void Awake () {
-		if (controller == null)
+        bf = new BinaryFormatter();
+
+        if (controller == null)
         {
             DontDestroyOnLoad(this);
             controller = this;
@@ -47,9 +49,8 @@ public class GameController : MonoBehaviour {
 
     void Start()
     {
-        //LockCursor();
+        LockCursor();
 
-        bf = new BinaryFormatter();
         numLevels = 1;
         numMoms = 5;
         if (load() != 0)
@@ -77,7 +78,11 @@ public class GameController : MonoBehaviour {
     public int save()
     {
         FileStream file = File.Open(Application.persistentDataPath + "/progression.dat", FileMode.OpenOrCreate);
+        Debug.Log(Application.persistentDataPath);
         gameData data = new gameData(highScores, unlockedMoms, unlockedLevels, gamesPlayed);
+        Debug.Log(data);
+        Debug.Log(file);
+        Debug.Log(bf);
         bf.Serialize(file, data);
         file.Close();
 
