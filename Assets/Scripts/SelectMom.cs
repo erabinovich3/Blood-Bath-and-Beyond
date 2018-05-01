@@ -35,7 +35,7 @@ public class SelectMom : MonoBehaviour {
         //Select mom and make necessary GUI changes
         if (Input.GetButtonDown("Submit"))
         {
-            SceneManager.LoadScene("level1");
+            SceneManager.LoadScene("LoadingScene");
         }
         else
         {
