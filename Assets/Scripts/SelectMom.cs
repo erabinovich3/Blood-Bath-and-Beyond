@@ -78,7 +78,7 @@ public class SelectMom : MonoBehaviour {
         Material newMat = Resources.Load("black", typeof(Material)) as Material;
         for (int i = 0; i < lights.Length; i++)
         {
-            Debug.Log(GameController.controller.unlockedMoms);
+            Debug.Log(Application.persistentDataPath);
             if (GameController.controller.unlockedMoms[i] == false)
             {
                 

@@ -31,49 +31,17 @@ public class FinalScore : MonoBehaviour {
         replaymsg = GameObject.Find("StartNewGameButton").GetComponentInChildren<Text>();
         score = GameObject.Find("Score").GetComponent<Text>();
 		highscore = GameObject.Find("Highscore").GetComponent<Text>();
-	
 
-		if (PlayerPrefs.GetInt ("Score") > PlayerPrefs.GetInt ("Highscore")) {
+        Debug.Log(PlayerPrefs.GetInt("Score"));
+        Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        if (PlayerPrefs.GetInt ("Score") > PlayerPrefs.GetInt ("Highscore")) {
+            Debug.Log("reached");
 			PlayerPrefs.SetInt ("Highscore", PlayerPrefs.GetInt ("Score"));
 			score.text = "You've set a new highscore of " + PlayerPrefs.GetInt ("Score") + " points!";
 
 
             // save unlocked moms
-            int cur = Math.Max(PlayerPrefs.GetInt("Highscore"), 0);
-            int momIndex =cur / 100;
-            if (momIndex >= 1)
-            {
-                score.text += "\nYou have unlocked Casual Mom!";
-            }
-            if (momIndex >= 2)
-            {
-                score.text += "\nYou have unlocked Helicopter Mom!";
-            }
-            if (momIndex >= 3)
-            {
-                score.text += "\nYou have unlocked Survivalist Mom!";
-            }
-            if (momIndex >= 4)
-            {
-                score.text += "\nYou have unlocked Business Mom!";
-            }
-
-
-
-            bool[] unlockedMoms = GameController.controller.unlockedMoms; 
-            for (int i = 0; i < unlockedMoms.Length; i++)
-            {
-                if (i < momIndex + 1)
-                {
-                    unlockedMoms[i] = true;
-
-                } else
-                {
-                    unlockedMoms[i] = false;
-                }
-            }
-
-            GameController.controller.save();
+           
 
 
         } else {
@@ -86,8 +54,46 @@ public class FinalScore : MonoBehaviour {
         if (PlayerPrefs.GetInt("Score") >= minScore) {
             message.text = "We're saved!\nYou successfully sanitized the youth!";
             replaymsg.text = "Start New Game";
-            
-            
+
+            int cur = Math.Max(PlayerPrefs.GetInt("Highscore"), 0);
+            Debug.Log(cur);
+            int momIndex = cur / 100;
+            if (momIndex >= 1)
+            {
+                message.text += "\nYou have unlocked Casual Mom!";
+            }
+            if (momIndex >= 2)
+            {
+                message.text += "\nYou have unlocked Helicopter Mom!";
+            }
+            if (momIndex >= 3)
+            {
+                message.text += "\nYou have unlocked Survivalist Mom!";
+            }
+            if (momIndex >= 4)
+            {
+                message.text += "\nYou have unlocked Business Mom!";
+            }
+
+
+
+            bool[] unlockedMoms = GameController.controller.unlockedMoms;
+            for (int i = 0; i < unlockedMoms.Length; i++)
+            {
+                if (i < momIndex + 1)
+                {
+                    unlockedMoms[i] = true;
+
+                }
+                else
+                {
+                    unlockedMoms[i] = false;
+                }
+            }
+
+            GameController.controller.save();
+
+
         }
 
 
