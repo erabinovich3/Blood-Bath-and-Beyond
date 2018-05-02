@@ -64,9 +64,6 @@ public class GameController : MonoBehaviour {
             unlockedLevels[0] = true;
             unlockedMoms[0] = true;
         }
-        unlockedMoms = new bool[numMoms];
-        unlockedMoms[0] = true;
-        unlockedMoms[1] = true;
     }
 
 
