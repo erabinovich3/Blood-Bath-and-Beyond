@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class FinalScore : MonoBehaviour {
 
@@ -36,12 +37,29 @@ public class FinalScore : MonoBehaviour {
 			PlayerPrefs.SetInt ("Highscore", PlayerPrefs.GetInt ("Score"));
 			score.text = "You've set a new highscore of " + PlayerPrefs.GetInt ("Score") + " points!";
 
+
             // save unlocked moms
-            int cur = PlayerPrefs.GetInt("Highscore");
-            int momIndex = cur / 100;
+            int cur = Math.Max(PlayerPrefs.GetInt("Highscore"), 0);
+            int momIndex =cur / 100;
+            if (momIndex >= 1)
+            {
+                score.text += "\nYou have unlocked Casual Mom!";
+            }
+            if (momIndex >= 2)
+            {
+                score.text += "\nYou have unlocked Helicopter Mom!";
+            }
+            if (momIndex >= 3)
+            {
+                score.text += "\nYou have unlocked Survivalist Mom!";
+            }
+            if (momIndex >= 4)
+            {
+                score.text += "\nYou have unlocked Business Mom!";
+            }
 
 
-       
+
             bool[] unlockedMoms = GameController.controller.unlockedMoms; 
             for (int i = 0; i < unlockedMoms.Length; i++)
             {

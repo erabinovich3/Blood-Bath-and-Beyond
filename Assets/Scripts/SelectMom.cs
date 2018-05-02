@@ -47,7 +47,7 @@ public class SelectMom : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                momNumber = (momNumber - 1) % count;
+                momNumber = (momNumber + count - 1) % count;
                 string logMessage = "The number is " + momNumber + ".";
                 Debug.Log(logMessage);
             }
@@ -74,5 +74,18 @@ public class SelectMom : MonoBehaviour {
 				lights [i].intensity = 3;
 			}
 		}
+
+        Material newMat = Resources.Load("black", typeof(Material)) as Material;
+        for (int i = 0; i < lights.Length; i++)
+        {
+            Debug.Log(GameController.controller.unlockedMoms);
+            if (GameController.controller.unlockedMoms[i] == false)
+            {
+                
+                lights[i].intensity = 0;
+                //moms[i].GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+
+            }
+        }
 	}
 }
