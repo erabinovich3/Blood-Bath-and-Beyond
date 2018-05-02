@@ -35,7 +35,30 @@ public class FinalScore : MonoBehaviour {
 		if (PlayerPrefs.GetInt ("Score") > PlayerPrefs.GetInt ("Highscore")) {
 			PlayerPrefs.SetInt ("Highscore", PlayerPrefs.GetInt ("Score"));
 			score.text = "You've set a new highscore of " + PlayerPrefs.GetInt ("Score") + " points!";
-		} else {
+
+            // save unlocked moms
+            int cur = PlayerPrefs.GetInt("Highscore");
+            int momIndex = cur / 100;
+
+
+       
+            bool[] unlockedMoms = GameController.controller.unlockedMoms; 
+            for (int i = 0; i < unlockedMoms.Length; i++)
+            {
+                if (i < momIndex + 1)
+                {
+                    unlockedMoms[i] = true;
+
+                } else
+                {
+                    unlockedMoms[i] = false;
+                }
+            }
+
+            GameController.controller.save();
+
+
+        } else {
 			score.text = "Final Score: " + PlayerPrefs.GetInt("Score") + " / " + minScore;
 		}
 
@@ -45,6 +68,8 @@ public class FinalScore : MonoBehaviour {
         if (PlayerPrefs.GetInt("Score") >= minScore) {
             message.text = "We're saved!\nYou successfully sanitized the youth!";
             replaymsg.text = "Start New Game";
+            
+            
         }
 
 

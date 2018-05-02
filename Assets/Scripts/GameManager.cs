@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     public AudioClip gainPoints;
     public AudioClip losePoints;
 
-    private int score;
+    public int score;
     private Animator scoreAnim;
     private Timer timer;
     private AudioSource source;

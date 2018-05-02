@@ -21,11 +21,6 @@ public class SelectMom : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(transform.gameObject);
-        		
-        
-        
-
-
     }
 
     // Update is called once per frame
@@ -39,15 +34,26 @@ public class SelectMom : MonoBehaviour {
         }
         else
         {
+
+            int count = 0;
+            bool[] unlm = GameController.controller.unlockedMoms;
+            for (int i = 0; i < unlm.Length; i ++)
+            {
+                if (unlm[i] == true)
+                {
+                    count++;
+                }
+            }
+
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                momNumber = (momNumber + 4) % 5;
+                momNumber = (momNumber - 1) % count;
                 string logMessage = "The number is " + momNumber + ".";
                 Debug.Log(logMessage);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                momNumber = (momNumber + 1) % 5;
+                momNumber = (momNumber + 1) % count;
                 string logMessage = "The number is " + momNumber + ".";
                 Debug.Log(logMessage);
             }

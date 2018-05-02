@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour {
 
         numLevels = 1;
         numMoms = 5;
+        
         if (load() != 0)
         {
             unlockedMoms = new bool[numMoms];
@@ -63,6 +64,9 @@ public class GameController : MonoBehaviour {
             unlockedLevels[0] = true;
             unlockedMoms[0] = true;
         }
+        unlockedMoms = new bool[numMoms];
+        unlockedMoms[0] = true;
+        unlockedMoms[1] = true;
     }
 
 
@@ -85,7 +89,6 @@ public class GameController : MonoBehaviour {
         Debug.Log(bf);
         bf.Serialize(file, data);
         file.Close();
-
         return 0;
     }
 

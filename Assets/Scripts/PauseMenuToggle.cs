@@ -38,7 +38,7 @@ public class PauseMenuToggle : MonoBehaviour {
 
 
 		instB.gameObject.SetActive(false);
-		quitB.gameObject.SetActive(false);
+		quitB   .gameObject.SetActive(false);
 		retuB.gameObject.SetActive(false);
 
 
