@@ -42,25 +42,47 @@ public class Hit : MonoBehaviour {
             anim.SetTrigger("hit");
             gameObject.GetComponent<TeenMovement>().hit();
 
-            // add to score only if correct weapon, else take score
-            if (this.gameObject.tag == "Boy") {
-                if (collision.gameObject.tag == "Soap") { // right thing, add points
-                    manager.AddScore(20);
-                } else { // wrong thing, subtract score
-                    manager.AddScore(-20);
+
+
+            if (GameController.controller.curMom == 4)
+            {
+                manager.AddScore(20);
+
+            }
+            else
+            {
+                // add to score only if correct weapon, else take score
+                if (this.gameObject.tag == "Boy")
+                {
+                    if (collision.gameObject.tag == "Soap")
+                    { // right thing, add points
+                        manager.AddScore(20);
+                    }
+                    else
+                    { // wrong thing, subtract score
+                        manager.AddScore(-20);
+                    }
                 }
-            } else if (this.gameObject.tag == "Girl") {
-                if (collision.gameObject.tag == "Tampon") { // right thing, add points
-                    manager.AddScore(20);
-                }
-                else { // wrong thing, subtract score
-                    manager.AddScore(-20);
+                else if (this.gameObject.tag == "Girl")
+                {
+                    if (collision.gameObject.tag == "Tampon")
+                    { // right thing, add points
+                        manager.AddScore(20);
+                    }
+                    else
+                    { // wrong thing, subtract score
+                        manager.AddScore(-20);
+                    }
                 }
             }
+
 
             // change CapsuleCollider to horizontal and decrease radius so he hits the ground
             collider.radius = 0.15f;
             collider.direction = 2;
+
+
+
         }
     }
 }

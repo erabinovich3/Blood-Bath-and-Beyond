@@ -55,9 +55,9 @@ public class FinalScore : MonoBehaviour {
             message.text = "We're saved!\nYou successfully sanitized the youth!";
             replaymsg.text = "Start New Game";
 
-            int cur = Math.Max(PlayerPrefs.GetInt("Highscore"), 0);
+            int cur = Math.Max(PlayerPrefs.GetInt("Highscore") - 100, 0);
             Debug.Log(cur);
-            int momIndex = cur / 100;
+            int momIndex = cur / 50;
             if (momIndex >= 1)
             {
                 message.text += "\nYou have unlocked Casual Mom!";
