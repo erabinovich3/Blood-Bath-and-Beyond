@@ -7,11 +7,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class GameController : MonoBehaviour {
     public static GameController controller;
 
+    //serialized fields
     public int[] highScores;
     public bool[] unlockedMoms; 
     public bool[] unlockedLevels;
     public int gamesPlayed;
 
+    //game variables
+    public int curMom;
 
     private int numLevels;
     private int numMoms;

@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour {
 
     public AudioClip gain;
 
-    float timeLeft = 120.0f;
+    float timeLeft = 60.0f;
     Text time;
     Animator anim;
     AudioSource source;
@@ -49,7 +49,15 @@ public class Timer : MonoBehaviour {
 
     public void addTime() {
         anim.SetTrigger("add-time"); // trigger added time animation
-        timeLeft += 15f;
+        if (GameController.controller.curMom == 1)
+        {
+            timeLeft += 45f;
+        }
+        else
+        {
+            timeLeft += 30f;
+        }
+        
         source.PlayOneShot(gain);
     }
 }

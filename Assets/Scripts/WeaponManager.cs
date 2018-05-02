@@ -155,7 +155,15 @@ public class WeaponManager : MonoBehaviour {
         currProjectile = null;
 
         // get a new thing to throw after two-thirds of a second
-        Invoke("Reload", 0.75f);
+        if (GameController.controller.curMom == 3)
+        {
+            Invoke("Reload", .2f);
+        }
+        else
+        {
+            Invoke("Reload", .75f);
+        }
+        
 
 
     }

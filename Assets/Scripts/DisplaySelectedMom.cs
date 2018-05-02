@@ -9,11 +9,12 @@ public class DisplaySelectedMom : MonoBehaviour
     public GameObject[] dismoms;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         GameObject temp = GameObject.Find("MomSelect");
         SelectMom momScript = temp.GetComponent<SelectMom>();
         int sM = momScript.momNumber;
+        GameController.controller.curMom = sM;
         dismoms[sM].SetActive(true);
 
         Destroy(temp);
