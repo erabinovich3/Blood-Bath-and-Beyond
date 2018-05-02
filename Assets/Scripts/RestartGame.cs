@@ -8,4 +8,8 @@ public class RestartGame : MonoBehaviour {
 	public void GameRestarter() {
 		SceneManager.LoadScene ("chooseMom");
 	}
+
+    public void LoadCredits() {
+        SceneManager.LoadScene("credits");
+    }
 }

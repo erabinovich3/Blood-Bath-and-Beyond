@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class startMenu : MonoBehaviour {
 
+    public Button instrs_button;
+    public Button back;
+    public Button credits_button;
+
     private RawImage instrs;
-    private Button instrs_button;
-    private Button back;
-    private Button credits_button;
     private Image creditsBG;
     private Text credits;
 
@@ -17,20 +18,11 @@ public class startMenu : MonoBehaviour {
 	void Start () {
         instrs = GameObject.Find("RawImage").GetComponent<RawImage>();
         instrs.enabled = false;
-
-        instrs_button = GameObject.Find("Instrs").GetComponent<Button>();
+        
         instrs_button.onClick.AddListener(ShowInstructions);
-
-        /*creditsBG = GameObject.Find("Image").GetComponent<Image>();
-        if (creditsBG == null) { Debug.LogError("No background"); }
-        creditsBG.enabled = false;
-        credits = GameObject.Find("Credits").GetComponent<Text>();
-        credits.enabled = false;*/
-
-        credits_button = GameObject.Find("Credits").GetComponent<Button>();
+        
         credits_button.onClick.AddListener(ShowCredits);
-
-        back = GameObject.Find("Back").GetComponent<Button>();
+        
         back.onClick.AddListener(GoBack);
         back.gameObject.SetActive(false);
     }
@@ -41,16 +33,11 @@ public class startMenu : MonoBehaviour {
     }
 
     public void ShowCredits() {
-        SceneManager.LoadScene("Credits");
-        /*creditsBG.enabled = true;
-        credits.enabled = true;
-        back.gameObject.SetActive(true);*/
+        SceneManager.LoadScene("credits");
     }
 
     public void GoBack() {
         instrs.enabled = false;
-        //creditsBG.enabled = false;
-        //credits.enabled = false;
         back.gameObject.SetActive(false);
     }
 }
